@@ -59,14 +59,11 @@ _Jul 2025 – Aug 2025 | Remote (New York, USA)_
 
 ## 🎓 Education
 
-### **Indian Institute of Technology Kharagpur**
-**Bachelor of Technology**
+### **Bachelor of Technology** | Indian Institute of Technology Kharagpur
 _2026 | Kharagpur, India_
 
-### **Ryan International School**
-**Science (PCM)**
+### **Science (PCM)** | Ryan International School
 _2021 | Greater Noida, India_
 
 ---
 [© Aashutosh Joshi](https://github.com/Aashutoshh01)
-
