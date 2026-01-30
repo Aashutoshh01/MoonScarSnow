@@ -1,0 +1,44 @@
+- title: Agentorithm
+  description: A sophisticated, multi-agent AI system designed to solve Data Structures and Algorithms (DSA) problems by breaking them down into simpler steps.
+  url: https://github.com/Aashutoshh01/Agentorithm
+  tags: [AI Agents, Python]
+
+- title: CerinaFoundry
+  description: specialized multi-agent AI system designed to assist mental health professionals in drafting Cognitive Behavioral Therapy (CBT) clinical protocols.
+  url: https://github.com/Aashutoshh01/CerinaFoundry
+  tags: [AI Agents, Healthcare]
+
+- title: Indic-ASR
+  description: SOTA Hindi Speech Recognition model reducing WER from 30.18% to 20.75%, matching performance of commercial APIs like Sarvam.
+  url: https://github.com/Aashutoshh01/Indic-ASR
+  tags: [Audio, LLM, Hindi]
+
+- title: LlamaCare
+  description: A LoRA-fine-tuned TinyLlama-1.1B model designed for supportive, empathetic mental-health responses with 4-bit quantization.
+  url: https://github.com/Aashutoshh01/LlamaCare
+  tags: [LLM, Fine-Tuning, Healthcare]
+
+- title: VisionSmith
+  description: A clean, from-scratch Vision Transformer (ViT) implementation in PyTorch, trained on MNIST based on the "An Image is Worth 16x16 Words" paper.
+  url: https://github.com/Aashutoshh01/VisionSmith
+  tags: [Computer Vision, PyTorch]
+
+- title: ArXivGPT
+  description: A 124M-parameter GPT-2 model trained from scratch on ArXiv abstracts, featuring fully custom Transformer components.
+  url: https://github.com/Aashutoshh01/ArXivGPT
+  tags: [LLM, Pre-training]
+
+- title: ScratchSpeakSLM
+  description: A tiny GPT-style language model built completely from scratch in PyTorch, demonstrating how small transformer models can learn to generate coherent text.
+  url: https://github.com/Aashutoshh01/ScratchSpeakSLM
+  tags: [SLM, PyTorch]
+
+- title: StockSage
+  description: A powerful, multi-agent financial analysis tool built with the phidata library for deep diving into stock market data.
+  url: https://github.com/Aashutoshh01/StockSage
+  tags: [Finance, AI Agents]
+
+- title: awesome-quant
+  description: A curated list of insanely awesome libraries, packages, and resources for Quants (Quantitative Finance).
+  url: https://github.com/Aashutoshh01/awesome-quant
+  tags: [Finance, Resources]

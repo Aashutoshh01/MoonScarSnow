@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<div class="nav-container">
+    <a href="{{ '/' | relative_url }}" class="nav-link">🏠 Home</a>
+    <a href="{{ '/projects' | relative_url }}" class="nav-link">💻 Projects</a>
+    <a href="{{ '/blog' | relative_url }}" class="nav-link">📰 Blog</a>
+</div>
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">{{ page.title }}</h1>
+        <p class="post-meta">{{ page.date | date: "%B %-d, %Y" }}</p>
+    </header>
+
+    <div class="post-content">
+        {{ content }}
+    </div>
+</article>

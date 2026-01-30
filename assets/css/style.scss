@@ -129,3 +129,72 @@ footer p {
   text-align: center !important;
   color: #6a737d;
 }
+
+/* Grid Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  border: 1px solid #e1e4e8;
+  border-radius: 10px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-color: #0366d6;
+}
+
+.card-title {
+  font-size: 1.25em;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #0366d6;
+}
+
+.card-desc {
+  font-size: 0.95em;
+  color: #586069;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.card-tags {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: #f1f8ff;
+  color: #0366d6;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+
+/* Post Styling */
+.post-header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.post-meta {
+  color: #6a737d;
+  font-style: italic;
+}

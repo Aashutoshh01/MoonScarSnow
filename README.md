@@ -1,7 +1,12 @@
+---
+layout: default
+title: Home
+---
+
 <div class="nav-container">
-  <a href="./" class="nav-link">🏠 Home</a>
-  <a href="PROJECTS.md" class="nav-link">💻 Projects</a>
-  <a href="RESEARCH.md" class="nav-link">🔬 Research</a>
+  <a href="{{ '/' | relative_url }}" class="nav-link" style="background-color: #0366d6; color: white;">🏠 Home</a>
+  <a href="{{ '/blog' | relative_url }}" class="nav-link">📰 Blog</a>
+  <a href="{{ '/projects' | relative_url }}" class="nav-link">💻 Projects</a>
 </div>
 
 <img src="assets/img/headshot_circle.png" alt="Aashutosh Joshi" class="profile-img">
@@ -41,29 +46,54 @@ I research SAR processing, complex-valued neural networks, and efficient adaptat
 
 ## 💼 Experience
 
-### **Undergraduate Researcher** | Indian Institute of Technology, Kharagpur
-_Oct 2024 – Present | Onsite (India)_
-- Synthesized 100+ studies on complex-valued networks, validating phase information’s critical role in SAR analysis.
-- Engineered **Complex-Valued CNN & Autoencoder** models, achieving **93.72% accuracy** on dual-pol SAR data inputs.
-- Architecting a novel **Complex-Valued Vision Transformer (CV-ViT)** to leverage all unlabeled complex SAR datasets.
-- Implementing custom pretraining and **Complex-Valued LoRA (CV-LoRA)** techniques for efficient model adaptation.
+<div class="experience-item">
+  <div class="exp-header">
+    <span class="exp-role">Undergraduate Researcher</span>
+    <span class="exp-date">Oct 2024 – Present</span>
+  </div>
+  <div class="exp-company">Indian Institute of Technology, Kharagpur | Onsite (India)</div>
+  <p>
+    <ul>
+      <li>Synthesized 100+ studies on complex-valued networks, validating phase information’s critical role in SAR analysis</li>
+      <li>Engineered <strong>Complex-Valued CNN & Autoencoder</strong> models, achieving <strong>93.72% accuracy</strong> on dual-pol SAR data inputs</li>
+      <li>Architecting a novel <strong>Complex-Valued Vision Transformer (CV-ViT)</strong> to leverage all unlabeled complex SAR datasets</li>
+      <li>Implementing custom pretraining and <strong>Complex-Valued LoRA (CV-LoRA)</strong> techniques for efficient model adaptation</li>
+    </ul>
+  </p>
+</div>
 
-### **Software Engineer - ML Intern** | Autocash.AI
-_Jul 2025 – Aug 2025 | Remote (New York, USA)_
-- Conducted research on time-series models, evaluating literature for volatile financial datasets to define project scope.
-- Benchmarked **ARIMA, LSTM, TTM, & SVM**, selecting **XGBoost** for its superior real-world predictive accuracy.
-- Engineered features using **Fast Fourier & Wavelet Transforms**, enhancing XGBoost’s pattern detection via denoising.
-- Applied **SHAP** for model explainability, validating all features & achieving a **40% boost** in overall forecast accuracy.
+<div class="experience-item">
+  <div class="exp-header">
+    <span class="exp-role">Software Engineer - ML Intern</span>
+    <span class="exp-date">Jul 2025 – Aug 2025</span>
+  </div>
+  <div class="exp-company">Autocash.AI | Remote (New York, USA)</div>
+  <p>
+    <ul>
+      <li>Conducted research on time-series models, evaluating literature for volatile financial datasets to define project scope</li>
+      <li>Benchmarked <strong>ARIMA, LSTM, TTM, & SVM</strong>, selecting <strong>XGBoost</strong> for its superior real-world predictive accuracy</li>
+      <li>Engineered features using <strong>Fast Fourier & Wavelet Transforms</strong>, enhancing XGBoost’s pattern detection via denoising</li>
+      <li>Applied <strong>SHAP</strong> for model explainability, validating all features & achieving a <strong>40% boost</strong> in overall forecast accuracy</li>
+    </ul>
+  </p>
+</div>
 
 ---
 
 ## 🎓 Education
 
-### **Bachelor of Technology** | Indian Institute of Technology Kharagpur
-_2026 | Kharagpur, India_
+<div class="experience-item">
+  <div class="exp-header">
+    <span class="exp-role">Bachelor of Technology</span>
+    <span class="exp-date">2026</span>
+  </div>
+  <div class="exp-company">Indian Institute of Technology Kharagpur | India</div>
+</div>
 
-### **Science (PCM)** | Ryan International School
-_2021 | Greater Noida, India_
-
----
-[© Aashutosh Joshi](https://github.com/Aashutoshh01)
+<div class="experience-item">
+  <div class="exp-header">
+    <span class="exp-role">Science (PCM)</span>
+    <span class="exp-date">2021</span>
+  </div>
+  <div class="exp-company">Ryan International School | Greater Noida, India</div>
+</div>
