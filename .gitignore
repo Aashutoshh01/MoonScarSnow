@@ -1,0 +1,8 @@
+*.pdf
+.DS_Store
+_site/
+.sass-cache/
+.jekyll-cache/
+gemfiles/
+Gemfile.lock
+node_modules/
