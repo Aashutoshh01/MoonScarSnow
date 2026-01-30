@@ -1,4 +1,8 @@
-[**🏠 Home**](./) | [**💻 Projects**](PROJECTS.md) | [**🔬 Research**](RESEARCH.md)
+<div class="nav-container">
+  <a href="./" class="nav-link">🏠 Home</a>
+  <a href="PROJECTS.md" class="nav-link">� Projects</a>
+  <a href="RESEARCH.md" class="nav-link">🔬 Research</a>
+</div>
 ---
 
 # 🔬 Research
