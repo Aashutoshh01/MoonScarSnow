@@ -1,3 +1,6 @@
+[**🏠 Home**](./) | [**💻 Projects**](PROJECTS.md) | [**🔬 Research**](RESEARCH.md)
+---
+
 # Aashutosh Joshi
 
 ### Data Scientist | AI Researcher | Open Source Contributor

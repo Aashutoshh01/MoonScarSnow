@@ -1,3 +1,6 @@
+[**🏠 Home**](./) | [**💻 Projects**](PROJECTS.md) | [**🔬 Research**](RESEARCH.md)
+---
+
 # 🔬 Research
 
 My research interests lie at the intersection of complex-valued deep learning, multimodal systems, and efficient model architecture.

@@ -1,3 +1,6 @@
+[**🏠 Home**](./) | [**💻 Projects**](PROJECTS.md) | [**🔬 Research**](RESEARCH.md)
+---
+
 # 💻 Projects
 
 Here is a collection of my key projects spanning AI Agents, Large Language Models (LLMs), Computer Vision, and Quantitative Finance.
