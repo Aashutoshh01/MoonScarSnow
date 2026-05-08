@@ -19,7 +19,7 @@ title: Home
 
 <hr data-aos="fade-in" data-aos-delay="500">
 
-<div data-aos="fade-right" data-aos-delay="100">
+<div data-aos="fade-right" data-aos-delay="100" markdown="1">
   ## 📌 About Me
 
   🌱 **I learn and build across advanced AI/ML systems.**
@@ -37,7 +37,7 @@ title: Home
   🧠 **Research Focus**
   I research SAR processing, complex-valued neural networks, and efficient adaptation methods such as LoRA and CV-LoRA.
 
-  <blockquote data-aos="fade-left">"SLM >>> LLM"</blockquote>
+  > "SLM >>> LLM"
 </div>
 
 <hr data-aos="fade-in">

@@ -52,7 +52,7 @@ hr {
   max-width: 1000px !important;
   margin: 0 auto !important;
   width: 95% !important;
-  padding-top: 40px;
+  padding-top: 100px; /* Account for fixed nav */
   padding-bottom: 40px;
 }
 
@@ -80,13 +80,12 @@ section.main-content {
   align-items: center;
   gap: 10px;
   padding: 15px 20px;
-  margin-bottom: 40px;
-  position: sticky;
+  position: fixed; /* Ensures it is always visible on scroll */
   top: 20px;
-  z-index: 100;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999; /* Absolute top layer */
+  width: max-content;
 }
 
 .nav-link {
@@ -307,10 +306,15 @@ blockquote {
 }
 
 /* --- Footer --- */
-.glass-footer {
-  margin-top: 60px;
-  padding: 30px;
-  text-align: center;
+/* Completely override minimal theme footer */
+footer, .glass-footer {
+  position: static !important;
+  width: 100% !important;
+  float: none !important;
+  clear: both !important;
+  margin-top: 60px !important;
+  padding: 30px !important;
+  text-align: center !important;
 }
 
 .glass-footer p {
