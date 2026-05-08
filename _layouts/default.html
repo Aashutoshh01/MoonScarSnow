@@ -128,16 +128,60 @@
         
         camera.position.z = 32; 
         
-        // Mouse interaction
+        // Mouse interaction for rotation
         let mouseX = 0;
         let mouseY = 0;
         document.addEventListener('mousemove', (event) => {
           mouseX = (event.clientX / window.innerWidth) * 2 - 1;
           mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
         });
+
+        // Interactive Glow Logic
+        const hudButtons = document.querySelectorAll('.hud-btn');
+        let targetOpacity = 0.6; // Base opacity for the particle core
+        let glowHoverCount = 0;
+
+        function updateGlowState() {
+          if (glowHoverCount > 0) {
+            targetOpacity = 0.95; // Brighten the core material
+            globeContainer.style.filter = "drop-shadow(0 0 40px rgba(253, 251, 247, 0.4))"; // Outer glow
+          } else {
+            targetOpacity = 0.6;
+            globeContainer.style.filter = "drop-shadow(0 0 0px rgba(253, 251, 247, 0))";
+          }
+        }
+
+        // 1. Hover on specific navigation link
+        hudButtons.forEach(btn => {
+          btn.addEventListener('mouseenter', () => {
+            glowHoverCount++;
+            btn.classList.add('active-glow');
+            updateGlowState();
+          });
+          btn.addEventListener('mouseleave', () => {
+            glowHoverCount--;
+            btn.classList.remove('active-glow');
+            updateGlowState();
+          });
+        });
+
+        // 2. Hover directly on the 3D core
+        globeContainer.addEventListener('mouseenter', () => {
+          glowHoverCount++;
+          hudButtons.forEach(b => b.classList.add('active-glow'));
+          updateGlowState();
+        });
+        globeContainer.addEventListener('mouseleave', () => {
+          glowHoverCount--;
+          hudButtons.forEach(b => b.classList.remove('active-glow'));
+          updateGlowState();
+        });
         
         function animate() {
           requestAnimationFrame(animate);
+
+          // Smoothly interpolate material opacity for glowing effect
+          particleMat.opacity += (targetOpacity - particleMat.opacity) * 0.1;
           
           // Auto rotate slowly
           sphereGroup.rotation.y += 0.002;

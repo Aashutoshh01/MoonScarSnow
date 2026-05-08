@@ -171,7 +171,7 @@ section.main-content {
   position: absolute;
   z-index: 10;
   text-decoration: none !important;
-  color: rgba(253, 251, 247, 0.7) !important;
+  color: rgba(253, 251, 247, 0.5) !important; /* Dim by default */
   font-family: 'Courier New', Courier, monospace;
   font-weight: 700;
   font-size: 1.1em;
@@ -181,19 +181,19 @@ section.main-content {
   transition: all 0.3s ease;
 }
 
-.hud-btn:hover {
+.hud-btn.active-glow {
   color: #fff !important;
   text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
 }
 
 .hud-num {
   font-size: 0.8em;
-  opacity: 0.5;
+  opacity: 0.3;
   color: #fff;
   transition: opacity 0.3s ease;
 }
 
-.hud-btn:hover .hud-num {
+.hud-btn.active-glow .hud-num {
   opacity: 1;
 }
 
@@ -220,30 +220,38 @@ section.main-content {
 /* Connecting Lines */
 .hud-line {
   display: inline-block;
-  width: 80px;
+  width: 0px; /* Hidden by default */
+  opacity: 0;
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
   margin: 0 15px;
   position: relative;
-  transition: width 0.3s ease, background 0.3s ease;
+  transition: width 0.4s ease, opacity 0.4s ease, background 0.4s ease;
 }
 
-.hud-btn:hover .hud-line {
+.hud-btn.active-glow .hud-line {
   width: 100px;
+  opacity: 1;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
 }
 
 .hud-line-vertical {
   width: 1px;
-  height: 60px;
+  height: 0px; /* Hidden by default */
+  opacity: 0;
   background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.3), transparent);
   margin-bottom: 15px;
-  transition: height 0.3s ease, background 0.3s ease;
+  transition: height 0.4s ease, opacity 0.4s ease, background 0.4s ease;
 }
 
-.hud-bottom:hover .hud-line-vertical {
+.hud-btn.active-glow .hud-line-vertical {
   height: 80px;
+  opacity: 1;
   background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+}
+
+#vanta-globe-nav {
+  transition: filter 0.4s ease;
 }
 
 /* --- Profile Section --- */
