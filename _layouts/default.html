@@ -68,7 +68,7 @@
         minWidth: 200.00,
         scale: 1.00,
         scaleMobile: 1.00,
-        color: 0xfdfbf7, // Cream color for the 3D network lines
+        color: 0x333333, // DIMMED for Eclipse aesthetic
         backgroundColor: 0x121212, // Charcoal Black background
         points: 15.00,
         maxDistance: 24.00,
@@ -87,13 +87,13 @@
         
         const sphereGroup = new THREE.Group();
 
-        // Golden Geodesic outer sphere
-        const geometry = new THREE.IcosahedronGeometry(15, 2); // Bigger radius
+        // Luminous Cream Geodesic Core
+        const geometry = new THREE.IcosahedronGeometry(15, 2); 
         const material = new THREE.MeshBasicMaterial({ 
-          color: 0xd4af37, // Premium Gold
+          color: 0xfdfbf7, 
           wireframe: true,
           transparent: true,
-          opacity: 0.5
+          opacity: 0.6
         });
         
         // Dark solid inner sphere
@@ -102,21 +102,6 @@
         
         sphereGroup.add(new THREE.Mesh(geometry, material));
         sphereGroup.add(innerSphere);
-
-        // Solid Planetary Ring
-        const ringGeo = new THREE.RingGeometry(19, 19.2, 64);
-        const ringMat = new THREE.MeshBasicMaterial({ color: 0xd4af37, side: THREE.DoubleSide, transparent: true, opacity: 0.6 });
-        const ring = new THREE.Mesh(ringGeo, ringMat);
-        ring.rotation.x = Math.PI / 2 - 0.2;
-        sphereGroup.add(ring);
-
-        // Dashed Outer Planetary Ring
-        const edges = new THREE.EdgesGeometry(new THREE.RingGeometry(24, 24, 64));
-        const lineMat = new THREE.LineDashedMaterial({ color: 0xd4af37, dashSize: 0.8, gapSize: 1.5, transparent: true, opacity: 0.4 });
-        const line = new THREE.LineSegments(edges, lineMat);
-        line.computeLineDistances();
-        line.rotation.x = Math.PI / 2 - 0.2;
-        sphereGroup.add(line);
         
         scene.add(sphereGroup);
         
@@ -129,12 +114,6 @@
           mouseX = (event.clientX / window.innerWidth) * 2 - 1;
           mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
         });
-
-        // DOM elements for 3D orbit
-        const btnProjects = document.getElementById("btn-projects");
-        const btnBlog = document.getElementById("btn-blog");
-        const btnCv = document.getElementById("btn-cv");
-        const orbitButtons = [btnProjects, btnBlog, btnCv];
         
         function animate() {
           requestAnimationFrame(animate);
@@ -148,39 +127,6 @@
           sphereGroup.rotation.x += mouseY * 0.01;
           
           renderer.render(scene, camera);
-
-          // Update DOM Buttons for 3D Orbit
-          // Instead of continuously revolving, we lock them to the front hemisphere
-          // so users don't have to wait. They subtly shift with mouse movement (parallax).
-          const radiusX = 230; // Ellipse width
-          const radiusY = 70;  // Ellipse tilt height
-          
-          // Static angles spread across the bottom front of the globe
-          // We subtract a fraction of mouseX to make them slide along the orbit interactively
-          const parallax = mouseX * 0.2;
-          const angles = [
-            Math.PI * 0.15 - parallax, // Right side
-            Math.PI * 0.50 - parallax, // Center
-            Math.PI * 0.85 - parallax  // Left side
-          ];
-
-          orbitButtons.forEach((btn, i) => {
-            if (btn) {
-              const angle = angles[i];
-              const x = Math.cos(angle) * radiusX;
-              const y = Math.sin(angle) * radiusY;
-              
-              // They remain on the front (sin(angle) > 0)
-              const isBehind = Math.sin(angle) < 0;
-              const scale = isBehind ? 0.85 : 1;
-              const zIndex = isBehind ? 0 : 2; 
-              const opacity = isBehind ? 0.5 : 1;
-
-              btn.style.transform = `translate(${x}px, ${y}px) scale(${scale})`;
-              btn.style.zIndex = zIndex;
-              btn.style.opacity = opacity;
-            }
-          });
         }
         animate();
       }

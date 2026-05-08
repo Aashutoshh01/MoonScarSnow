@@ -20,9 +20,11 @@ title: Home
 <div class="globe-nav-wrapper" data-aos="zoom-in" data-aos-delay="500">
   <!-- The floating 3D globe renders here -->
   <div id="vanta-globe-nav"></div>
-  
-  <!-- Orbiting links -->
-  <a href="{{ '/projects/' | relative_url }}" class="orbital-btn" id="btn-projects">Projects</a>
-  <a href="{{ '/blog/' | relative_url }}" class="orbital-btn" id="btn-blog">Blog</a>
-  <a href="{{ '/cv/' | relative_url }}" class="orbital-btn" id="btn-cv">CV</a>
+</div>
+
+<!-- HUD Command Dock -->
+<div class="nav-dock" data-aos="fade-up" data-aos-delay="600">
+  <a href="{{ '/projects/' | relative_url }}" class="dock-btn">Projects</a>
+  <a href="{{ '/blog/' | relative_url }}" class="dock-btn">Blog</a>
+  <a href="{{ '/cv/' | relative_url }}" class="dock-btn">CV</a>
 </div>
