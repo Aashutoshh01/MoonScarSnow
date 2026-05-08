@@ -150,10 +150,19 @@
           renderer.render(scene, camera);
 
           // Update DOM Buttons for 3D Orbit
-          const time = Date.now() * 0.0006; // Orbit speed
-          const radiusX = 220; // Ellipse width
-          const radiusY = 60;  // Ellipse tilt height
-          const angles = [time, time + (Math.PI * 2 / 3), time + (Math.PI * 4 / 3)];
+          // Instead of continuously revolving, we lock them to the front hemisphere
+          // so users don't have to wait. They subtly shift with mouse movement (parallax).
+          const radiusX = 230; // Ellipse width
+          const radiusY = 70;  // Ellipse tilt height
+          
+          // Static angles spread across the bottom front of the globe
+          // We subtract a fraction of mouseX to make them slide along the orbit interactively
+          const parallax = mouseX * 0.2;
+          const angles = [
+            Math.PI * 0.15 - parallax, // Right side
+            Math.PI * 0.50 - parallax, // Center
+            Math.PI * 0.85 - parallax  // Left side
+          ];
 
           orbitButtons.forEach((btn, i) => {
             if (btn) {
@@ -161,10 +170,10 @@
               const x = Math.cos(angle) * radiusX;
               const y = Math.sin(angle) * radiusY;
               
-              // Determine if button is behind the globe
+              // They remain on the front (sin(angle) > 0)
               const isBehind = Math.sin(angle) < 0;
               const scale = isBehind ? 0.85 : 1;
-              const zIndex = isBehind ? 0 : 2; // 0 goes behind #vanta-globe-nav
+              const zIndex = isBehind ? 0 : 2; 
               const opacity = isBehind ? 0.5 : 1;
 
               btn.style.transform = `translate(${x}px, ${y}px) scale(${scale})`;
