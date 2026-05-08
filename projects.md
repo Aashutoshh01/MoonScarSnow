@@ -4,12 +4,6 @@ title: Projects
 permalink: /projects/
 ---
 
-<div class="nav-container">
-  <a href="{{ '/' | relative_url }}" class="nav-link">🏠 Home</a>
-  <a href="{{ '/blog' | relative_url }}" class="nav-link">📰 Blog</a>
-  <a href="{{ '/projects' | relative_url }}" class="nav-link" style="background-color: #0366d6; color: white;">💻 Projects</a>
-</div>
-
 # 💻 My Projects
 
 <div class="grid-container">

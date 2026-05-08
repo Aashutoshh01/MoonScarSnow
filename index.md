@@ -3,12 +3,6 @@ layout: default
 title: Home
 ---
 
-<div class="nav-container">
-  <a href="{{ '/' | relative_url }}" class="nav-link" style="background-color: #0366d6; color: white;">🏠 Home</a>
-  <a href="{{ '/blog' | relative_url }}" class="nav-link">📰 Blog</a>
-  <a href="{{ '/projects' | relative_url }}" class="nav-link">💻 Projects</a>
-</div>
-
 <img src="assets/img/headshot_circle.png" alt="Aashutosh Joshi" class="profile-img">
 
 <div class="social-icons">
