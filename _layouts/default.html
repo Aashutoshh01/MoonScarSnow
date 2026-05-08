@@ -87,20 +87,41 @@
         
         const sphereGroup = new THREE.Group();
 
-        // Luminous Cream Geodesic Core
-        const geometry = new THREE.IcosahedronGeometry(15, 2); 
-        const material = new THREE.MeshBasicMaterial({ 
-          color: 0xfdfbf7, 
-          wireframe: true,
-          transparent: true,
-          opacity: 0.6
+        // The AI Data Core (Particle System)
+        const particleCount = 2500;
+        const particleGeo = new THREE.BufferGeometry();
+        const particlePos = new Float32Array(particleCount * 3);
+
+        for(let i=0; i < particleCount; i++) {
+            // Spherical coordinate math for even distribution
+            const u = Math.random();
+            const v = Math.random();
+            const theta = u * 2.0 * Math.PI;
+            const phi = Math.acos(2.0 * v - 1.0);
+            
+            // Randomize radius slightly to give it volumetric depth (radius 14 to 15.5)
+            const r = 14 + Math.random() * 1.5; 
+
+            particlePos[i*3] = r * Math.sin(phi) * Math.cos(theta);
+            particlePos[i*3+1] = r * Math.sin(phi) * Math.sin(theta);
+            particlePos[i*3+2] = r * Math.cos(phi);
+        }
+
+        particleGeo.setAttribute('position', new THREE.BufferAttribute(particlePos, 3));
+        const particleMat = new THREE.PointsMaterial({
+            color: 0xfdfbf7,
+            size: 0.15,
+            transparent: true,
+            opacity: 0.8,
+            blending: THREE.AdditiveBlending // Gives a glowing effect when particles overlap
         });
+
+        const particleSphere = new THREE.Points(particleGeo, particleMat);
+        sphereGroup.add(particleSphere);
         
-        // Dark solid inner sphere
+        // Dark solid inner core to block background lines and add depth
         const innerMaterial = new THREE.MeshBasicMaterial({ color: 0x121212 });
-        const innerSphere = new THREE.Mesh(new THREE.IcosahedronGeometry(14.8, 2), innerMaterial);
-        
-        sphereGroup.add(new THREE.Mesh(geometry, material));
+        const innerSphere = new THREE.Mesh(new THREE.IcosahedronGeometry(13.8, 2), innerMaterial);
         sphereGroup.add(innerSphere);
         
         scene.add(sphereGroup);
