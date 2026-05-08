@@ -15,7 +15,7 @@ title: Home
 </div>
 
 <h1 data-aos="fade-up" data-aos-delay="300">Aashutosh Joshi</h1>
-<p style="text-align: center;" data-aos="fade-up" data-aos-delay="400">Data Scientist | AI Researcher | Open Source Contributor</p>
+<p style="text-align: center;" data-aos="fade-up" data-aos-delay="400">Data Scientist | AI Researcher</p>
 
 <!-- HUD Command Center -->
 <div class="globe-nav-wrapper hud-container" data-aos="zoom-in" data-aos-delay="500">
