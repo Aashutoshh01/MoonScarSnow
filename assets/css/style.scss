@@ -166,37 +166,41 @@ section.main-content {
 }
 
 @keyframes zeroGravity {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-
-.orbital-btn-wrapper {
-  position: absolute;
-  z-index: 2;
-  animation: zeroGravity 4s ease-in-out infinite;
+  0%, 100% { margin-top: 0; }
+  50% { margin-top: -12px; }
 }
 
 .orbital-btn {
   background: rgba(30, 30, 30, 0.8);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(253, 251, 247, 0.3);
+  border: 1px solid rgba(212, 175, 55, 0.4); /* Subtle gold border to match */
   color: var(--text-primary) !important;
   padding: 12px 25px;
   border-radius: 30px;
   text-decoration: none !important;
   font-weight: 700;
   font-size: 1.1em;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* Remove transform from transition so JS animations don't stutter */
+  transition: background 0.4s, box-shadow 0.4s, border-color 0.4s;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* Use margin to offset center so transform origin remains center */
+  margin-left: -50px;
+  margin-top: -22px;
   display: block;
+  z-index: 2;
+  /* Add subtle CSS bobbing independent of JS transform */
+  animation: zeroGravity 4s ease-in-out infinite;
 }
 
-/* Position the 3 wrappers tightly around the orbit track */
-.wrapper-projects { top: 70px; left: 50%; margin-left: -65px; animation-delay: 0s; }
-.wrapper-blog { bottom: 100px; left: 10px; animation-delay: -1.3s; }
-.wrapper-cv { bottom: 100px; right: 10px; animation-delay: -2.6s; }
+/* Offset animation delays so they bob randomly */
+#btn-projects { animation-delay: 0s; }
+#btn-blog { animation-delay: -1.3s; }
+#btn-cv { animation-delay: -2.6s; }
 
 .orbital-btn::before {
   content: '';

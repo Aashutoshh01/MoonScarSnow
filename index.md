@@ -22,13 +22,7 @@ title: Home
   <div id="vanta-globe-nav"></div>
   
   <!-- Orbiting links -->
-  <div class="orbital-btn-wrapper wrapper-projects">
-    <a href="{{ '/projects/' | relative_url }}" class="orbital-btn btn-projects">🚀 Projects</a>
-  </div>
-  <div class="orbital-btn-wrapper wrapper-blog">
-    <a href="{{ '/blog/' | relative_url }}" class="orbital-btn btn-blog">📰 Blog</a>
-  </div>
-  <div class="orbital-btn-wrapper wrapper-cv">
-    <a href="{{ '/cv/' | relative_url }}" class="orbital-btn btn-cv">📄 CV / Resume</a>
-  </div>
+  <a href="{{ '/projects/' | relative_url }}" class="orbital-btn" id="btn-projects">Projects</a>
+  <a href="{{ '/blog/' | relative_url }}" class="orbital-btn" id="btn-blog">Blog</a>
+  <a href="{{ '/cv/' | relative_url }}" class="orbital-btn" id="btn-cv">CV</a>
 </div>

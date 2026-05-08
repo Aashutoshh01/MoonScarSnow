@@ -75,12 +75,11 @@
         spacing: 20.00
       });
 
-      // Initialize Custom 3D Wireframe Globe (Replacing Vanta GLOBE)
+      // Initialize Custom 3D Wireframe Globe
       const globeContainer = document.getElementById("vanta-globe-nav");
       if (globeContainer) {
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, globeContainer.clientWidth / globeContainer.clientHeight, 0.1, 1000);
-        // Alpha true makes background 100% transparent
         const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
         
         renderer.setSize(globeContainer.clientWidth, globeContainer.clientHeight);
@@ -88,32 +87,32 @@
         
         const sphereGroup = new THREE.Group();
 
-        // Cream Geodesic outer sphere (Icosahedron looks premium)
-        const geometry = new THREE.IcosahedronGeometry(12, 2);
+        // Golden Geodesic outer sphere
+        const geometry = new THREE.IcosahedronGeometry(15, 2); // Bigger radius
         const material = new THREE.MeshBasicMaterial({ 
-          color: 0xfdfbf7, 
+          color: 0xd4af37, // Premium Gold
           wireframe: true,
           transparent: true,
-          opacity: 0.35
+          opacity: 0.5
         });
         
-        // Dark solid inner sphere to give volume and block background lines
+        // Dark solid inner sphere
         const innerMaterial = new THREE.MeshBasicMaterial({ color: 0x121212 });
-        const innerSphere = new THREE.Mesh(new THREE.IcosahedronGeometry(11.8, 2), innerMaterial);
+        const innerSphere = new THREE.Mesh(new THREE.IcosahedronGeometry(14.8, 2), innerMaterial);
         
         sphereGroup.add(new THREE.Mesh(geometry, material));
         sphereGroup.add(innerSphere);
 
         // Solid Planetary Ring
-        const ringGeo = new THREE.RingGeometry(16, 16.2, 64);
-        const ringMat = new THREE.MeshBasicMaterial({ color: 0xfdfbf7, side: THREE.DoubleSide, transparent: true, opacity: 0.4 });
+        const ringGeo = new THREE.RingGeometry(19, 19.2, 64);
+        const ringMat = new THREE.MeshBasicMaterial({ color: 0xd4af37, side: THREE.DoubleSide, transparent: true, opacity: 0.6 });
         const ring = new THREE.Mesh(ringGeo, ringMat);
         ring.rotation.x = Math.PI / 2 - 0.2;
         sphereGroup.add(ring);
 
         // Dashed Outer Planetary Ring
-        const edges = new THREE.EdgesGeometry(new THREE.RingGeometry(20, 20, 64));
-        const lineMat = new THREE.LineDashedMaterial({ color: 0xfdfbf7, dashSize: 0.8, gapSize: 1.5, transparent: true, opacity: 0.2 });
+        const edges = new THREE.EdgesGeometry(new THREE.RingGeometry(24, 24, 64));
+        const lineMat = new THREE.LineDashedMaterial({ color: 0xd4af37, dashSize: 0.8, gapSize: 1.5, transparent: true, opacity: 0.4 });
         const line = new THREE.LineSegments(edges, lineMat);
         line.computeLineDistances();
         line.rotation.x = Math.PI / 2 - 0.2;
@@ -121,7 +120,7 @@
         
         scene.add(sphereGroup);
         
-        camera.position.z = 30; // Moved camera back to fit the rings
+        camera.position.z = 32; 
         
         // Mouse interaction
         let mouseX = 0;
@@ -130,6 +129,12 @@
           mouseX = (event.clientX / window.innerWidth) * 2 - 1;
           mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
         });
+
+        // DOM elements for 3D orbit
+        const btnProjects = document.getElementById("btn-projects");
+        const btnBlog = document.getElementById("btn-blog");
+        const btnCv = document.getElementById("btn-cv");
+        const orbitButtons = [btnProjects, btnBlog, btnCv];
         
         function animate() {
           requestAnimationFrame(animate);
@@ -143,6 +148,30 @@
           sphereGroup.rotation.x += mouseY * 0.01;
           
           renderer.render(scene, camera);
+
+          // Update DOM Buttons for 3D Orbit
+          const time = Date.now() * 0.0006; // Orbit speed
+          const radiusX = 220; // Ellipse width
+          const radiusY = 60;  // Ellipse tilt height
+          const angles = [time, time + (Math.PI * 2 / 3), time + (Math.PI * 4 / 3)];
+
+          orbitButtons.forEach((btn, i) => {
+            if (btn) {
+              const angle = angles[i];
+              const x = Math.cos(angle) * radiusX;
+              const y = Math.sin(angle) * radiusY;
+              
+              // Determine if button is behind the globe
+              const isBehind = Math.sin(angle) < 0;
+              const scale = isBehind ? 0.85 : 1;
+              const zIndex = isBehind ? 0 : 2; // 0 goes behind #vanta-globe-nav
+              const opacity = isBehind ? 0.5 : 1;
+
+              btn.style.transform = `translate(${x}px, ${y}px) scale(${scale})`;
+              btn.style.zIndex = zIndex;
+              btn.style.opacity = opacity;
+            }
+          });
         }
         animate();
       }
