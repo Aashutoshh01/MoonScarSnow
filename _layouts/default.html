@@ -41,11 +41,11 @@
       </nav>
       {% endif %}
 
-      <section class="glass-container main-content">
+      <section class="glass-container main-content {% if page.url == '/' %}transparent-container{% endif %}">
         {{ content }}
       </section>
       
-      <footer class="glass-footer" data-aos="fade-in" data-aos-delay="200">
+      <footer class="glass-footer {% if page.url == '/' %}transparent-container{% endif %}" data-aos="fade-in" data-aos-delay="200">
         <p>&copy; {{ 'now' | date: "%Y" }} Aashutosh Joshi</p>
         <p><small>Building complex systems with elegant code.</small></p>
       </footer>
@@ -86,26 +86,42 @@
         renderer.setSize(globeContainer.clientWidth, globeContainer.clientHeight);
         globeContainer.appendChild(renderer.domElement);
         
-        // Cream wireframe outer sphere
-        const geometry = new THREE.SphereGeometry(14, 32, 32);
+        const sphereGroup = new THREE.Group();
+
+        // Cream Geodesic outer sphere (Icosahedron looks premium)
+        const geometry = new THREE.IcosahedronGeometry(12, 2);
         const material = new THREE.MeshBasicMaterial({ 
           color: 0xfdfbf7, 
           wireframe: true,
           transparent: true,
-          opacity: 0.3
+          opacity: 0.35
         });
         
         // Dark solid inner sphere to give volume and block background lines
-        const innerMaterial = new THREE.MeshBasicMaterial({
-          color: 0x121212,
-        });
-        const innerSphere = new THREE.Mesh(new THREE.SphereGeometry(13.8, 32, 32), innerMaterial);
+        const innerMaterial = new THREE.MeshBasicMaterial({ color: 0x121212 });
+        const innerSphere = new THREE.Mesh(new THREE.IcosahedronGeometry(11.8, 2), innerMaterial);
         
-        const sphere = new THREE.Mesh(geometry, material);
-        scene.add(sphere);
-        scene.add(innerSphere);
+        sphereGroup.add(new THREE.Mesh(geometry, material));
+        sphereGroup.add(innerSphere);
+
+        // Solid Planetary Ring
+        const ringGeo = new THREE.RingGeometry(16, 16.2, 64);
+        const ringMat = new THREE.MeshBasicMaterial({ color: 0xfdfbf7, side: THREE.DoubleSide, transparent: true, opacity: 0.4 });
+        const ring = new THREE.Mesh(ringGeo, ringMat);
+        ring.rotation.x = Math.PI / 2 - 0.2;
+        sphereGroup.add(ring);
+
+        // Dashed Outer Planetary Ring
+        const edges = new THREE.EdgesGeometry(new THREE.RingGeometry(20, 20, 64));
+        const lineMat = new THREE.LineDashedMaterial({ color: 0xfdfbf7, dashSize: 0.8, gapSize: 1.5, transparent: true, opacity: 0.2 });
+        const line = new THREE.LineSegments(edges, lineMat);
+        line.computeLineDistances();
+        line.rotation.x = Math.PI / 2 - 0.2;
+        sphereGroup.add(line);
         
-        camera.position.z = 25; // Controls how large the globe appears
+        scene.add(sphereGroup);
+        
+        camera.position.z = 30; // Moved camera back to fit the rings
         
         // Mouse interaction
         let mouseX = 0;
@@ -119,16 +135,12 @@
           requestAnimationFrame(animate);
           
           // Auto rotate slowly
-          sphere.rotation.y += 0.003;
-          sphere.rotation.x += 0.001;
-          innerSphere.rotation.y += 0.003;
-          innerSphere.rotation.x += 0.001;
+          sphereGroup.rotation.y += 0.002;
+          sphereGroup.rotation.x += 0.001;
           
           // React to mouse
-          sphere.rotation.y += mouseX * 0.01;
-          sphere.rotation.x += mouseY * 0.01;
-          innerSphere.rotation.y += mouseX * 0.01;
-          innerSphere.rotation.x += mouseY * 0.01;
+          sphereGroup.rotation.y += mouseX * 0.01;
+          sphereGroup.rotation.x += mouseY * 0.01;
           
           renderer.render(scene, camera);
         }

@@ -85,6 +85,14 @@ section.main-content {
   position: relative;
 }
 
+.transparent-container {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
 /* --- Navigation --- */
 .glass-nav {
   display: flex;
@@ -135,26 +143,12 @@ section.main-content {
 /* --- Floating Globe Navigation Hub (Home Page) --- */
 .globe-nav-wrapper {
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: 550px;
+  height: 550px;
   margin: 60px auto;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-/* 3D Orbit Track behind the globe */
-.globe-nav-wrapper::before {
-  content: '';
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%) rotateX(75deg);
-  width: 380px;
-  height: 380px;
-  border: 1px dashed rgba(253, 251, 247, 0.4);
-  border-radius: 50%;
-  z-index: 0; /* Behind the globe */
-  pointer-events: none;
 }
 
 #vanta-globe-nav {
@@ -171,6 +165,17 @@ section.main-content {
   cursor: grabbing;
 }
 
+@keyframes zeroGravity {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.orbital-btn-wrapper {
+  position: absolute;
+  z-index: 2;
+  animation: zeroGravity 4s ease-in-out infinite;
+}
+
 .orbital-btn {
   background: rgba(30, 30, 30, 0.8);
   backdrop-filter: blur(15px);
@@ -184,15 +189,14 @@ section.main-content {
   font-size: 1.1em;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  position: absolute; /* Absolutely position around globe */
-  z-index: 2; /* Orbiting buttons float above globe */
   overflow: hidden;
+  display: block;
 }
 
-/* Position the 3 buttons tightly around the orbit track */
-.btn-projects { top: 30px; left: 50%; transform: translateX(-50%); }
-.btn-blog { bottom: 50px; left: -10px; }
-.btn-cv { bottom: 50px; right: -10px; }
+/* Position the 3 wrappers tightly around the orbit track */
+.wrapper-projects { top: 70px; left: 50%; margin-left: -65px; animation-delay: 0s; }
+.wrapper-blog { bottom: 100px; left: 10px; animation-delay: -1.3s; }
+.wrapper-cv { bottom: 100px; right: 10px; animation-delay: -2.6s; }
 
 .orbital-btn::before {
   content: '';
@@ -208,12 +212,8 @@ section.main-content {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(253, 251, 247, 0.4);
   border-color: rgba(253, 251, 247, 0.8);
   background: rgba(40, 40, 40, 0.95);
+  transform: scale(1.1);
 }
-
-/* Add custom hover scaling based on base position */
-.btn-projects:hover { transform: translateX(-50%) translateY(-10px) scale(1.1); }
-.btn-blog:hover { transform: translateY(-10px) scale(1.1); }
-.btn-cv:hover { transform: translateY(-10px) scale(1.1); }
 
 .orbital-btn:hover::before {
   left: 200%;
