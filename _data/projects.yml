@@ -1,44 +1,69 @@
-- title: Agentorithm
-  description: A sophisticated, multi-agent AI system designed to solve Data Structures and Algorithms (DSA) problems by breaking them down into simpler steps.
-  url: https://github.com/Aashutoshh01/Agentorithm
-  tags: [AI Agents, Python]
+- title: PaliGemma
+  description: End-to-end reconstruction of PaliGemma in PyTorch, featuring SigLIP ViT, Gemma decoder with RoPE & GQA, KV caching, and autoregressive multimodal inference.
+  url: https://github.com/Aashutoshh01/paligemma-pytorch
+  tags: [VLM, PyTorch, Multimodal, Transformers]
+
+- title: Wav2Vec2
+  description: End-to-end PyTorch implementation of Wav2Vec2 with convolutional feature encoding, Transformer contextualization, Gumbel vector quantization, and full pipelines for contrastive pre-training and CTC fine-tuning.
+  url: https://github.com/Aashutoshh01/wav2vec2-pytorch
+  tags: [LLM, Speech, PyTorch, Transformers]
+
+- title: VisionSmith
+  description: A clean, from-scratch Vision Transformer (ViT) implementation in PyTorch, trained on MNIST based on the "An Image is Worth 16x16 Words" paper.
+  url: https://github.com/Aashutoshh01/VisionSmith
+  tags: [Vision, PyTorch, Transformers]
+
+- title: ArXivGPT
+  description: A 124M-parameter GPT-2 model trained from scratch on ArXiv abstracts, featuring fully custom Transformer components implemented in PyTorch.
+  url: https://github.com/Aashutoshh01/ArXivGPT
+  tags: [LLM, Pre-training, Transformers]
+
+- title: ScratchSpeakSLM
+  description: A tiny GPT-style language model built completely from scratch in PyTorch, inspired by TinyStories, demonstrating how small transformer models can learn to generate coherent text.
+  url: https://github.com/Aashutoshh01/ScratchSpeakSLM
+  tags: [SLM, PyTorch, Transformers]
+
+- title: LlamaCare
+  description: A LoRA-fine-tuned TinyLlama-1.1B model designed for supportive, empathetic mental-health responses. Trained on a custom 15k-sample dataset with 4-bit quantization, achieving massive perplexity improvements and efficient performance on a single H100 GPU.
+  url: https://github.com/Aashutoshh01/LlamaCare
+  tags: [LLM, Fine-Tuning, Healthcare]
+
+- title: Conformer
+  description: End-to-end Conformer ASR in PyTorch featuring Macaron-style blocks, relative multi-head attention, depthwise convolutions, and an LSTM decoder with CTC loss.
+  url: https://github.com/Aashutoshh01/conformer-pytorch
+  tags: [Audio, ASR, PyTorch, Transformers]
+
+- title: DeepSpeech2
+  description: A from-scratch PyTorch implementation of the DeepSpeech2 architecture for automatic speech recognition (ASR)
+  url: https://github.com/Aashutoshh01/deepspeech2-pytorch
+  tags: [ASR, PyTorch]
+
+- title: Indic-ASR
+  description: Hindi Speech Recognition model reducing WER from 30.18% to 20.75%, matching performance of commercial APIs like Sarvam.
+  url: https://github.com/Aashutoshh01/Indic-ASR
+  tags: [Audio, LLM, Benchmarking]
 
 - title: CerinaFoundry
   description: specialized multi-agent AI system designed to assist mental health professionals in drafting Cognitive Behavioral Therapy (CBT) clinical protocols.
   url: https://github.com/Aashutoshh01/CerinaFoundry
   tags: [AI Agents, Healthcare]
 
-- title: Indic-ASR
-  description: SOTA Hindi Speech Recognition model reducing WER from 30.18% to 20.75%, matching performance of commercial APIs like Sarvam.
-  url: https://github.com/Aashutoshh01/Indic-ASR
-  tags: [Audio, LLM, Hindi]
+- title: Agentorithm
+  description: A sophisticated, multi-agent AI system designed to solve Data Structures and Algorithms (DSA) problems by breaking them down into simpler steps.
+  url: https://github.com/Aashutoshh01/Agentorithm
+  tags: [AI Agents, Python]
 
-- title: LlamaCare
-  description: A LoRA-fine-tuned TinyLlama-1.1B model designed for supportive, empathetic mental-health responses with 4-bit quantization.
-  url: https://github.com/Aashutoshh01/LlamaCare
-  tags: [LLM, Fine-Tuning, Healthcare]
+- title: ArXivMind
+  description: ArXivMind is an intelligent, multi-agent system designed to accelerate academic research. Built with Microsoft's AutoGen framework, it automates the process of finding and summarizing scholarly articles from arXiv.
+  url: https://github.com/Aashutoshh01/ArXivMind
+  tags: [Research, AI Agents, Python]
 
-- title: VisionSmith
-  description: A clean, from-scratch Vision Transformer (ViT) implementation in PyTorch, trained on MNIST based on the "An Image is Worth 16x16 Words" paper.
-  url: https://github.com/Aashutoshh01/VisionSmith
-  tags: [Computer Vision, PyTorch]
-
-- title: ArXivGPT
-  description: A 124M-parameter GPT-2 model trained from scratch on ArXiv abstracts, featuring fully custom Transformer components.
-  url: https://github.com/Aashutoshh01/ArXivGPT
-  tags: [LLM, Pre-training]
-
-- title: ScratchSpeakSLM
-  description: A tiny GPT-style language model built completely from scratch in PyTorch, demonstrating how small transformer models can learn to generate coherent text.
-  url: https://github.com/Aashutoshh01/ScratchSpeakSLM
-  tags: [SLM, PyTorch]
+- title: CFAspire
+  description: CFAspire is an intelligent chatbot designed to help users study for the CFA Level 1 exam.
+  url: https://github.com/Aashutoshh01/CFAspire
+  tags: [CFA, LLM, AI Agents]
 
 - title: StockSage
   description: A powerful, multi-agent financial analysis tool built with the phidata library for deep diving into stock market data.
   url: https://github.com/Aashutoshh01/StockSage
   tags: [Finance, AI Agents]
-
-- title: awesome-quant
-  description: A curated list of insanely awesome libraries, packages, and resources for Quants (Quantitative Finance).
-  url: https://github.com/Aashutoshh01/awesome-quant
-  tags: [Finance, Resources]
