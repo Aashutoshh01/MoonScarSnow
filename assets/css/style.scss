@@ -140,12 +140,13 @@ section.main-content {
   transform: translateY(-2px);
 }
 
-/* --- Floating Globe Navigation Hub (Home Page) --- */
-.globe-nav-wrapper {
+/* --- HUD Command Dashboard (Home Page) --- */
+.hud-container {
   position: relative;
-  width: 400px;
-  height: 400px;
-  margin: 40px auto 20px;
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  margin: 40px auto 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -156,67 +157,93 @@ section.main-content {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  z-index: 1; /* Globe is in center layer */
+  width: 400px !important;
+  height: 400px !important;
+  z-index: 1;
   cursor: grab;
 }
 #vanta-globe-nav:active {
   cursor: grabbing;
 }
 
-/* --- HUD Command Dock Navigation --- */
-.nav-dock {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  background: rgba(30, 30, 30, 0.7);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
-  border: 1px solid rgba(253, 251, 247, 0.15);
-  border-radius: 40px;
-  padding: 15px 30px;
-  width: max-content;
-  /* Negative top margin pulls the dock up so it perfectly overlaps the bottom of the 3D globe */
-  margin: -60px auto 60px; 
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  position: relative;
-  z-index: 10;
-}
-
-.dock-btn {
-  color: var(--text-secondary) !important;
-  font-weight: 600;
-  font-size: 1.1em;
-  padding: 10px 25px;
-  border-radius: 20px;
-  text-decoration: none !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-}
-
-.dock-btn::after {
-  content: '';
+/* --- HUD Dashboard Links --- */
+.hud-btn {
   position: absolute;
-  bottom: 0;
+  z-index: 10;
+  text-decoration: none !important;
+  color: rgba(253, 251, 247, 0.7) !important;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+  font-size: 1.1em;
+  letter-spacing: 3px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.hud-btn:hover {
+  color: #fff !important;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+}
+
+.hud-num {
+  font-size: 0.8em;
+  opacity: 0.5;
+  color: #fff;
+  transition: opacity 0.3s ease;
+}
+
+.hud-btn:hover .hud-num {
+  opacity: 1;
+}
+
+/* Positioning */
+.hud-left {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.hud-right {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.hud-bottom {
+  bottom: -20px;
   left: 50%;
   transform: translateX(-50%);
-  width: 0;
-  height: 2px;
-  background: var(--text-primary);
-  transition: width 0.3s ease;
-  box-shadow: 0 0 10px var(--text-primary);
+  flex-direction: column;
 }
 
-.dock-btn:hover {
-  color: var(--text-primary) !important;
-  background: rgba(253, 251, 247, 0.08);
-  transform: translateY(-2px);
+/* Connecting Lines */
+.hud-line {
+  display: inline-block;
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  margin: 0 15px;
+  position: relative;
+  transition: width 0.3s ease, background 0.3s ease;
 }
 
-.dock-btn:hover::after {
-  width: 60%;
+.hud-btn:hover .hud-line {
+  width: 100px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+}
+
+.hud-line-vertical {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  margin-bottom: 15px;
+  transition: height 0.3s ease, background 0.3s ease;
+}
+
+.hud-bottom:hover .hud-line-vertical {
+  height: 80px;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.8), transparent);
 }
 
 /* --- Profile Section --- */
@@ -443,5 +470,25 @@ footer, .glass-footer {
     flex-direction: column;
     gap: 8px;
   }
-}
-
+  
+  /* HUD Mobile Adjustments */
+  .hud-container {
+    width: 100%;
+    height: auto;
+    min-height: 500px;
+  }
+  .hud-line, .hud-line-vertical { display: none; }
+  .hud-left, .hud-right, .hud-bottom {
+    position: static;
+    transform: none;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  #vanta-globe-nav {
+    position: relative;
+    top: auto; left: auto; transform: none;
+    margin: 0 auto;
+    width: 300px !important;
+    height: 300px !important;
+  }
+}

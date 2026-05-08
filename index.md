@@ -17,14 +17,24 @@ title: Home
 <h1 data-aos="fade-up" data-aos-delay="300">Aashutosh Joshi</h1>
 <p style="text-align: center;" data-aos="fade-up" data-aos-delay="400">Data Scientist | AI Researcher | Open Source Contributor</p>
 
-<div class="globe-nav-wrapper" data-aos="zoom-in" data-aos-delay="500">
-  <!-- The floating 3D globe renders here -->
+<!-- HUD Command Center -->
+<div class="globe-nav-wrapper hud-container" data-aos="zoom-in" data-aos-delay="500">
+  <!-- The floating 3D Data Core renders here -->
   <div id="vanta-globe-nav"></div>
-</div>
 
-<!-- HUD Command Dock -->
-<div class="nav-dock" data-aos="fade-up" data-aos-delay="600">
-  <a href="{{ '/projects/' | relative_url }}" class="dock-btn">Projects</a>
-  <a href="{{ '/blog/' | relative_url }}" class="dock-btn">Blog</a>
-  <a href="{{ '/cv/' | relative_url }}" class="dock-btn">CV</a>
+  <!-- HUD Dashboard Links -->
+  <a href="{{ '/projects/' | relative_url }}" class="hud-btn hud-left">
+    <span><span class="hud-num">01_</span>PROJECTS</span>
+    <div class="hud-line"></div>
+  </a>
+
+  <a href="{{ '/cv/' | relative_url }}" class="hud-btn hud-right">
+    <div class="hud-line"></div>
+    <span><span class="hud-num">02_</span>CV</span>
+  </a>
+
+  <a href="{{ '/blog/' | relative_url }}" class="hud-btn hud-bottom">
+    <div class="hud-line-vertical"></div>
+    <span><span class="hud-num">03_</span>BLOG</span>
+  </a>
 </div>
