@@ -19,25 +19,25 @@ title: Home
 
 <hr data-aos="fade-in" data-aos-delay="500">
 
-<div data-aos="fade-right" data-aos-delay="100" markdown="1">
-  ## 📌 About Me
+<div data-aos="fade-right" data-aos-delay="100">
+  <h2 style="display: flex; align-items: center; gap: 10px;">📌 About Me</h2>
 
-  🌱 **I learn and build across advanced AI/ML systems.**
-  My work spans transformer architectures, small language models (SLMs), and complex-valued deep learning.
+  <p>🌱 <strong>I learn and build across advanced AI/ML systems.</strong><br>
+  My work spans transformer architectures, small language models (SLMs), and complex-valued deep learning.</p>
 
-  🤝 **Open Source & Research**
-  I actively collaborate on open-source AI projects, research prototypes, and high-performance model training pipelines.
+  <p>🤝 <strong>Open Source & Research</strong><br>
+  I actively collaborate on open-source AI projects, research prototypes, and high-performance model training pipelines.</p>
 
-  🔍 **Scalable Systems**
-  I work on scalable agentic AI systems, distributed training setups, and multimodal model design.
+  <p>🔍 <strong>Scalable Systems</strong><br>
+  I work on scalable agentic AI systems, distributed training setups, and multimodal model design.</p>
 
-  🚀 **From Scratch to Scale**
-  I build models from scratch (GPT-style LLMs, ViTs), design full training/evaluation workflows, and deploy interactive UIs.
+  <p>🚀 <strong>From Scratch to Scale</strong><br>
+  I build models from scratch (GPT-style LLMs, ViTs), design full training/evaluation workflows, and deploy interactive UIs.</p>
 
-  🧠 **Research Focus**
-  I research SAR processing, complex-valued neural networks, and efficient adaptation methods such as LoRA and CV-LoRA.
+  <p>🧠 <strong>Research Focus</strong><br>
+  I research SAR processing, complex-valued neural networks, and efficient adaptation methods such as LoRA and CV-LoRA.</p>
 
-  > "SLM >>> LLM"
+  <blockquote>"SLM >>> LLM"</blockquote>
 </div>
 
 <hr data-aos="fade-in">

@@ -35,8 +35,10 @@
         </a>
       </nav>
 
-      <section class="glass-container main-content" data-aos="fade-up" data-aos-delay="100">
-        {{ content }}
+      <section class="tilt-container" data-aos="fade-up" data-aos-delay="100">
+        <div class="glass-container main-content tilt-inner">
+          {{ content }}
+        </div>
       </section>
       
       <footer class="glass-footer" data-aos="fade-in" data-aos-delay="200">
@@ -74,6 +76,14 @@
         duration: 800,
         once: true,
         offset: 50,
+      });
+
+      // Initialize Giant Section Tilt (Subtle)
+      VanillaTilt.init(document.querySelectorAll(".tilt-container"), {
+        max: 2,
+        speed: 1000,
+        glare: true,
+        "max-glare": 0.05,
       });
 
       // Initialize 3D Card Tilt
