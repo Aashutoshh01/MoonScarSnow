@@ -13,45 +13,55 @@ permalink: /cv/
 <div class="tilt-card" data-aos="flip-left">
   <div class="tilt-card-inner">
     <div class="exp-header">
-      <span class="exp-role">Undergraduate Researcher</span>
+      <span class="exp-role">Undergraduate Research Internship</span>
       <span class="exp-date">Oct 2024 – Present</span>
     </div>
-    <div class="exp-company">Indian Institute of Technology, Kharagpur | Onsite (India)</div>
-    <ul>
-      <li>Designed a complex-valued multi-domain architecture with attention, using spatial, Fourier, and wavelet domains</li>
-      <li>Developed cross-domain attention and adaptive fusion, preserving amplitude–phase relationships in complex signals</li>
-      <li>Proposed a knowledge-guided metric learning framework, aligning embedding space with semantic class relationships</li>
-    </ul>
+    <div class="exp-company">Indian Institute of Technology, Kharagpur | Kharagpur, India</div>
+    <p>Working on research under Prof. Mahesh Mohan at the Signal Processing and Artificial Intelligence (SPAi) Group, Department of Artificial Intelligence, IIT Kharagpur, with a focus on SAR LCC. My research spans Remote Sensing Foundation Models, Representation Learning, Knowledge Graphs, Transformers, and Complex-Valued Neural Networks for SAR understanding and improved generalization across diverse geolocations. Presented research work at IndoML 2025 and the IndiaAI PreSummit 2026.</p>
   </div>
 </div>
 
 <div class="tilt-card" data-aos="flip-right">
   <div class="tilt-card-inner">
     <div class="exp-header">
-      <span class="exp-role">AI Engineer | Internship</span>
+      <span class="exp-role">AI Engineer Intern</span>
       <span class="exp-date">Jan 2026 – Feb 2026</span>
     </div>
     <div class="exp-company">Cerina Health | Remote (London, England)</div>
-    <ul>
-      <li>Designed parsing logic for structured LLM outputs, enabling reliable tool-call based interactions across sessions</li>
-      <li>Aligned model-generated responses with downstream actions in conversational AI systems across multiple sessions</li>
-      <li>Developed multi-step interaction flows for LLM-driven applications, improving consistency across user interactions</li>
-    </ul>
+    <p>Contributed to the development of reliable conversational AI systems by designing robust parsing logic for structured LLM outputs. Focused on aligning model-generated responses with downstream actions and developing multi-step interaction flows to ensure seamless, tool-call based interactions and high consistency across user sessions.</p>
   </div>
 </div>
 
 <div class="tilt-card" data-aos="flip-left">
   <div class="tilt-card-inner">
     <div class="exp-header">
-      <span class="exp-role">Software Engineer - ML | Internship</span>
-      <span class="exp-date">Jul 2025 – Aug 2025</span>
+      <span class="exp-role">Software Engineer - ML Intern</span>
+      <span class="exp-date">Jun 2025 – Dec 2025</span>
     </div>
     <div class="exp-company">Autocash.AI | Remote (New York, USA)</div>
-    <ul>
-      <li>Benchmarked <strong>ARIMA, LSTM, TTM, & SVM</strong>, selecting <strong>XGBoost</strong> for its superior real-world predictive accuracy</li>
-      <li>Engineered features using <strong>Fast Fourier & Wavelet Transforms</strong>, enhancing XGBoost’s pattern detection via denoising</li>
-      <li>Applied <strong>SHAP</strong> for model explainability, validating all features & achieving a <strong>40% boost</strong> in overall forecast accuracy</li>
-    </ul>
+    <p>Worked on financial forecasting for client datasets using statistical, probabilistic, and classical time-series models, along with transformer-based architectures (IBM Granite / Moirai). Evaluated model performance across scenarios and contributed to selecting the most suitable approach for client use cases.</p>
+  </div>
+</div>
+
+<div class="tilt-card" data-aos="flip-right">
+  <div class="tilt-card-inner">
+    <div class="exp-header">
+      <span class="exp-role">Research Apprenticeship</span>
+      <span class="exp-date">Sep 2024 – Jan 2025</span>
+    </div>
+    <div class="exp-company">Cambridge Judge Business School | England, United Kingdom</div>
+    <p>Worked on a research project analyzing the cost-efficiency of ISRO’s satellite launches in comparison to the US space sector. Involved in developing an artificial neural network model to impute missing satellite launch cost data, strengthening dataset reliability for time-series and comparative analysis. Contributed to generating analytical insights that supported the study’s exploration of frugal innovation in the space industry.</p>
+  </div>
+</div>
+
+<div class="tilt-card" data-aos="flip-left">
+  <div class="tilt-card-inner">
+    <div class="exp-header">
+      <span class="exp-role">Data Science Fellow</span>
+      <span class="exp-date">Oct 2024 – Dec 2024</span>
+    </div>
+    <div class="exp-company">Fellowship.AI | San Francisco, California</div>
+    <p>Worked as part of a team developing intelligent financial web agents to extract real-time bank interest rates, leveraging automation for accurate data acquisition. Involved in integrating Omniparser to streamline data parsing and enhance extraction accuracy and overall system performance.</p>
   </div>
 </div>
 

@@ -374,10 +374,15 @@ h2 {
   border-radius: 20px;
 }
 
-.tilt-card ul {
+.tilt-card ul, .tilt-card p {
   padding-left: 20px;
   color: var(--text-secondary);
   line-height: 1.7;
+}
+
+.tilt-card p {
+  padding-left: 0;
+  margin-top: 10px;
 }
 
 .tilt-card li {
