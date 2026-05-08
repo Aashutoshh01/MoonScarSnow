@@ -132,38 +132,54 @@ section.main-content {
   transform: translateY(-2px);
 }
 
-/* --- Orbital Navigation Menu (Home Page) --- */
-.orbital-menu {
+/* --- Floating Globe Navigation Hub (Home Page) --- */
+.globe-nav-wrapper {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 60px auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
-  margin-top: 60px;
-  margin-bottom: 20px;
-  perspective: 1000px;
-  transform-style: preserve-3d;
-  flex-wrap: wrap;
+}
+
+#vanta-globe-nav {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: 1; /* Globe is in center layer */
+  cursor: grab;
+}
+#vanta-globe-nav:active {
+  cursor: grabbing;
 }
 
 .orbital-btn {
-  background: rgba(30, 30, 30, 0.7);
+  background: rgba(30, 30, 30, 0.8);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(253, 251, 247, 0.2);
+  border: 1px solid rgba(253, 251, 247, 0.3);
   color: var(--text-primary) !important;
-  padding: 15px 35px;
+  padding: 12px 25px;
   border-radius: 30px;
   text-decoration: none !important;
   font-weight: 700;
-  font-size: 1.2em;
+  font-size: 1.1em;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  position: relative;
+  position: absolute; /* Absolutely position around globe */
+  z-index: 2; /* Orbiting buttons float above globe */
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  gap: 10px;
 }
+
+/* Position the 3 buttons in a triangle around the globe */
+.btn-projects { top: -10px; left: 50%; transform: translateX(-50%); }
+.btn-blog { bottom: 30px; left: -40px; }
+.btn-cv { bottom: 30px; right: -40px; }
 
 .orbital-btn::before {
   content: '';
@@ -176,11 +192,15 @@ section.main-content {
 }
 
 .orbital-btn:hover {
-  transform: translateY(-10px) translateZ(40px) scale(1.05);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(253, 251, 247, 0.3);
-  border-color: rgba(253, 251, 247, 0.6);
-  background: rgba(40, 40, 40, 0.9);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(253, 251, 247, 0.4);
+  border-color: rgba(253, 251, 247, 0.8);
+  background: rgba(40, 40, 40, 0.95);
 }
+
+/* Add custom hover scaling based on base position */
+.btn-projects:hover { transform: translateX(-50%) translateY(-10px) scale(1.1); }
+.btn-blog:hover { transform: translateY(-10px) scale(1.1); }
+.btn-cv:hover { transform: translateY(-10px) scale(1.1); }
 
 .orbital-btn:hover::before {
   left: 200%;
