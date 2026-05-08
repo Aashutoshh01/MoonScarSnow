@@ -74,7 +74,7 @@ section.main-content {
   padding: 40px !important;
 }
 
-/* Glassmorphism utility */
+/* --- Glassmorphism utility --- */
 .glass-nav, .glass-container, .glass-footer {
   background: var(--glass-bg);
   backdrop-filter: blur(20px);
@@ -82,45 +82,7 @@ section.main-content {
   border: 1px solid var(--glass-border);
   border-radius: 24px;
   box-shadow: var(--glass-shadow);
-}
-
-/* --- Giant 3D Tilt Container --- */
-.tilt-container {
-  transform-style: preserve-3d;
   position: relative;
-  width: 100%;
-}
-
-.tilt-inner {
-  transform: translateZ(25px); /* Pops the main content text out from the background */
-}
-
-/* Animated Glowing Border */
-.glass-container {
-  position: relative;
-  overflow: visible;
-}
-
-.glass-container::before {
-  content: '';
-  position: absolute;
-  top: -2px; left: -2px; right: -2px; bottom: -2px;
-  background: linear-gradient(45deg, transparent 40%, rgba(253, 251, 247, 0.5), transparent 60%);
-  z-index: -1;
-  border-radius: 26px;
-  background-size: 200% 200%;
-  animation: borderGlow 4s linear infinite;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.tilt-container:hover .glass-container::before {
-  opacity: 1; /* Premium border glow appears on hover */
-}
-
-@keyframes borderGlow {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 200% 200%; }
 }
 
 /* --- Navigation --- */

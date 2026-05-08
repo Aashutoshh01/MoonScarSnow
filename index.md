@@ -40,11 +40,11 @@ title: Home
   <blockquote>"SLM >>> LLM"</blockquote>
 </div>
 
-<hr data-aos="fade-in">
+<hr data-aos="flip-up">
 
-<h2 data-aos="fade-right">💼 Experience</h2>
+<h2 data-aos="zoom-out-up">💼 Experience</h2>
 
-<div class="tilt-card" data-aos="fade-up">
+<div class="tilt-card" data-aos="flip-left">
   <div class="tilt-card-inner">
     <div class="exp-header">
       <span class="exp-role">Undergraduate Researcher</span>
@@ -60,7 +60,7 @@ title: Home
   </div>
 </div>
 
-<div class="tilt-card" data-aos="fade-up" data-aos-delay="100">
+<div class="tilt-card" data-aos="flip-right">
   <div class="tilt-card-inner">
     <div class="exp-header">
       <span class="exp-role">Software Engineer - ML Intern</span>
@@ -76,11 +76,11 @@ title: Home
   </div>
 </div>
 
-<hr data-aos="fade-in">
+<hr data-aos="flip-up">
 
-<h2 data-aos="fade-right">🎓 Education</h2>
+<h2 data-aos="zoom-out-up">🎓 Education</h2>
 
-<div class="tilt-card" data-aos="fade-up">
+<div class="tilt-card" data-aos="flip-up">
   <div class="tilt-card-inner">
     <div class="exp-header">
       <span class="exp-role">Bachelor of Technology</span>
@@ -90,7 +90,7 @@ title: Home
   </div>
 </div>
 
-<div class="tilt-card" data-aos="fade-up" data-aos-delay="100">
+<div class="tilt-card" data-aos="flip-down">
   <div class="tilt-card-inner">
     <div class="exp-header">
       <span class="exp-role">Science (PCM)</span>

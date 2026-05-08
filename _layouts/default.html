@@ -35,10 +35,8 @@
         </a>
       </nav>
 
-      <section class="tilt-container" data-aos="fade-up" data-aos-delay="100">
-        <div class="glass-container main-content tilt-inner">
-          {{ content }}
-        </div>
+      <section class="glass-container main-content">
+        {{ content }}
       </section>
       
       <footer class="glass-footer" data-aos="fade-in" data-aos-delay="200">
@@ -73,25 +71,18 @@
 
       // Initialize Scroll Animations
       AOS.init({
-        duration: 800,
-        once: true,
+        duration: 1000,
+        once: false,
         offset: 50,
       });
 
-      // Initialize Giant Section Tilt (Subtle)
-      VanillaTilt.init(document.querySelectorAll(".tilt-container"), {
-        max: 2,
-        speed: 1000,
-        glare: true,
-        "max-glare": 0.05,
-      });
-
-      // Initialize 3D Card Tilt
+      // Initialize Crazy 3D Card Tilt
       VanillaTilt.init(document.querySelectorAll(".tilt-card"), {
-        max: 8,
-        speed: 400,
+        max: 20,           // Aggressive tilt limit
+        speed: 400,        // Fast response
         glare: true,
-        "max-glare": 0.15,
+        "max-glare": 0.4,  // High gloss glare
+        scale: 1.05        // Card jumps forward on hover
       });
     </script>
   </body>
